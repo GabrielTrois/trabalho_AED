@@ -1,24 +1,7 @@
+#include "lista.h"
+
 #include <stdio.h>
-#include<stdbool.h>
-
-    struct Pokemon{
-    int id;
-    char* name;
-    char * type1;
-    char * type2;
-    int total;
-    int hp;
-    int attack;
-    int defense;
-    int sp_atk;
-    int sp_def;
-    int speed;
-    int gen;
-    char* legend;
-
-    struct no * prox;
-    struct no * ant;
-};
+#include <stdbool.h>
 
 int main() {
 
@@ -28,8 +11,8 @@ int main() {
         return 1;
     }
 
-    char buffer [ 801 ];
-    struct Pokemon pokedex [ 801 ];
+    char buffer [ 1000 ];
+    Pokemon pokedex [ 1000 ];
 
     int i = 0;
 
@@ -73,9 +56,11 @@ int main() {
         pokedex [ i ]. name = malloc ( sizeof ( char ) * ( strlen ( nome ) + 1) ) ;
         pokedex [ i ]. type1 = malloc ( sizeof ( char ) * ( strlen ( tipo1 ) + 1) );
         pokedex [ i ]. type2 = malloc ( sizeof ( char ) * ( strlen ( tipo2 ) + 1) );
-        strcpy ( pokedex [i ]. name , nome );
-        strcpy ( pokedex [i ]. type1 , tipo1 );
-        strcpy ( pokedex [i ]. type2 , tipo2 != "" ? tipo2 : "s");
+        pokedex [ i ]. legendary = malloc ( sizeof ( char ) * ( strlen ( legend ) + 1) );
+        strcpy ( pokedex [i]. name , nome );
+        strcpy ( pokedex [i]. type1 , tipo1 );
+        strcpy ( pokedex [i]. type2 , tipo2 != "" ? tipo2 : "s");
+        strcpy ( pokedex [i]. legendary , legend );
 
         pokedex [ i ]. id = id ;
         pokedex [ i ]. total = total ;
@@ -86,12 +71,9 @@ int main() {
         pokedex [ i ]. sp_def = sp_def ;
         pokedex [ i ]. speed = speed ;
         pokedex [ i ]. gen = gen ;
-        pokedex [ i ]. legend = legend ;
-        //imprime_pokemon (& pokedex [i ]) ;
+        imprimeNo (& pokedex [i]) ;
         getchar () ;
         i++;
-
-        printf("%d ", i);
     }
     fclose(file);
 
