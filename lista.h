@@ -3,9 +3,9 @@
 
 typedef struct{
     int id;
-    char* name;
-    char * type1;
-    char * type2;
+    char name[50];
+    char type1[20];
+    char type2[20];
     int total;
     int hp;
     int attack;
@@ -14,7 +14,7 @@ typedef struct{
     int sp_def;
     int speed;
     int gen;
-    char* legendary;
+    char legendary[5];
 
     struct no * prox;
     struct no * ant;
