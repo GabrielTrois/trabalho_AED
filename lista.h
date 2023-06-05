@@ -1,6 +1,8 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+#include <stdbool.h>
+
 typedef struct{
     int id;
     char name[50];
@@ -17,12 +19,14 @@ typedef struct{
     char legendary[5];
 
     struct no * prox;
-    struct no * ant;
+    struct no * prox_id;
 }Pokemon;
 
-void adicionarNo(struct Pokemon**);
+void criarLista();
 
-void buscarNo(struct Pokemon*);
+void adicionarNo(struct Pokemon**, int, char*, char*, char*, int, int, int, int, int, int, int, int, char*);
+
+bool checkPokemonById(struct Pokemon*, int);
 
 void removerNo(struct Pokemon*);
 

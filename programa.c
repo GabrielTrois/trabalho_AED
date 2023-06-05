@@ -15,8 +15,14 @@ int main() {
 
     Pokemon pokedex [1000];
 
+    //Pokemon* lista = malloc(1000 * sizeof(struct Pokemon));
+
+    struct Pokemon* lista = criarLista();
+
     int read = 0;
     int records = 0;
+    
+    int i;
 
     do{
         read = fscanf(file,
@@ -33,9 +39,12 @@ int main() {
                             &pokedex[records].sp_def,
                             &pokedex[records].speed,
                             &pokedex[records].gen,
-                            &pokedex[records].legendary);
+                            pokedex[records].legendary);
 
-        if(read == 13) records++;
+        if(read == 13){
+            if(strcmp(pokedex[records].type2, "none") == 0) strcpy(pokedex[records].type2, "");
+            records++;
+        }
 
         if (read != 13 && !feof(file)){
             printf("Formato de arquivo incorreto.\n");
@@ -49,6 +58,12 @@ int main() {
     } while (!feof(file));
 
     fclose(file);
+
+    /*---------------------------------------------------------------------------------*/
+
+    for(i = 0; i < records; i++){
+        adicionarNo(&lista, pokedex[i].id, pokedex[i].name, pokedex[i].type1, pokedex[i].type2, pokedex[i].total, pokedex[i].hp, pokedex[i].attack, pokedex[i].defense, pokedex[i].sp_atk, pokedex[i].sp_def, pokedex[i].speed, pokedex[i].gen, pokedex[i].legendary);
+    }
 
     return 0;
 }
