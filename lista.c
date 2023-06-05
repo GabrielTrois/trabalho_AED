@@ -5,15 +5,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-void criarLista(){
+struct Pokemon* criarLista(){
     return NULL;
 }
 
 void adicionarNo(struct Pokemon** head, int id, char* name, char* type1, char* type2, int total, int hp, int attack, int defense, int sp_atk, int sp_def, int speed, int gen, char* legendary){
-     struct Pokemon* novoNo = (struct Pokemon*)malloc(sizeof(struct Pokemon));
+     struct Pokemon* novoNo = (struct Pokemon*)malloc(sizeof(Pokemon));
 
      novoNo->id = id;
-     
+
      strcpy(novoNo->name, name);
      strcpy(novoNo->type1, type1);
      strcpy(novoNo->type2, type2);
@@ -34,11 +34,11 @@ void adicionarNo(struct Pokemon** head, int id, char* name, char* type1, char* t
      if (*head == NULL) {
         *head = novoNo;
     } else {
-        struct Node* current = *head;
-        while (current->next != NULL) {
-            current = current->next;
+        struct Pokemon* current = *head;
+        while (current->prox != NULL) {
+            current = current->prox;
         }
-        current->next = novoNo;
+        current->prox = novoNo;
     }
 }
 

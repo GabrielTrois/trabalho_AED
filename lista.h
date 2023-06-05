@@ -22,7 +22,7 @@ typedef struct{
     struct no * prox_id;
 }Pokemon;
 
-void criarLista();
+struct Pokemon* criarLista();
 
 void adicionarNo(struct Pokemon**, int, char*, char*, char*, int, int, int, int, int, int, int, int, char*);
 

@@ -21,7 +21,7 @@ int main() {
 
     int read = 0;
     int records = 0;
-    
+
     int i;
 
     do{
@@ -54,13 +54,14 @@ int main() {
         if (ferror(file)){
             printf("Erro ao ler o arquivo.\n");
         }
-                        
+
     } while (!feof(file));
 
     fclose(file);
 
     /*---------------------------------------------------------------------------------*/
 
+    /*Cria Lista Encadeada*/
     for(i = 0; i < records; i++){
         adicionarNo(&lista, pokedex[i].id, pokedex[i].name, pokedex[i].type1, pokedex[i].type2, pokedex[i].total, pokedex[i].hp, pokedex[i].attack, pokedex[i].defense, pokedex[i].sp_atk, pokedex[i].sp_def, pokedex[i].speed, pokedex[i].gen, pokedex[i].legendary);
     }
