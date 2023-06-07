@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct Pokemon* criarLista(){
+struct Lista* criarLista(){
     return NULL;
 }
 

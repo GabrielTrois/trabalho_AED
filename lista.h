@@ -17,19 +17,27 @@ typedef struct{
     int speed;
     int gen;
     char legendary[5];
-
-    struct no * prox;
-    struct no * prox_id;
 }Pokemon;
 
-struct Pokemon* criarLista();
+typedef struct {
+    void* data;
+    struct no* prev;
+    struct no* next;
+} no;
 
-void adicionarNo(struct Pokemon**, int, char*, char*, char*, int, int, int, int, int, int, int, int, char*);
+typedef struct {
+    no* head;
+    no* tail;
+} Lista;
 
-bool checkPokemonById(struct Pokemon*, int);
+struct Lista* lista criarLista();
 
-void removerNo(struct Pokemon*);
+void adicionarNo(struct Pokemon** head, int id, char* nome, char* tipo1, char* tipo2, int total, int hp, int ataque, int defesa, int ataque_sp, int defesa_sp, int velocidade, int ger, char* lendario);
 
-void imprimirNo(struct Pokemon*);
+bool checkPokemonById(struct Pokemon* head, int id);
+
+void removerNo(struct Pokemon* head);
+
+void imprimirNo(struct Pokemon* head);
 
 #endif

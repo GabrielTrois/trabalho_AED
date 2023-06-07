@@ -17,7 +17,7 @@ int main() {
 
     //Pokemon* lista = malloc(1000 * sizeof(struct Pokemon));
 
-    struct Pokemon* lista = criarLista();
+    struct Lista* lista = criarLista();
 
     int read = 0;
     int records = 0;
