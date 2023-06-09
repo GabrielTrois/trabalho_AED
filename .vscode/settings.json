@@ -1,0 +1,29 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "algorithm": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "memory_resource": "c",
+        "functional": "c",
+        "iterator": "c",
+        "memory": "c",
+        "numeric": "c",
+        "random": "c",
+        "fstream": "c",
+        "istream": "c",
+        "limits": "c",
+        "new": "c",
+        "ostream": "c",
+        "queue": "c",
+        "sstream": "c",
+        "streambuf": "c",
+        "cmath": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "vector": "c",
+        "stdbool.h": "c",
+        "stdio.h": "c"
+    }
+}
