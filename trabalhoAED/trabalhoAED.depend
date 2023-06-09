@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1686249664 source:c:\code\trabalho aed\lista.c
+	"lista.h"
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+
+1686249882 c:\code\trabalho aed\lista.h
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+	<stdlib.h>
+
+1686250189 source:c:\code\trabalho aed\programa.c
+	"lista.h"
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+	<stdlib.h>
+

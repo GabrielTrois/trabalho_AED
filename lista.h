@@ -1,9 +1,12 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+#include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
 
-typedef struct{
+struct Pokemon{
     int id;
     char name[50];
     char type1[20];
@@ -17,27 +20,42 @@ typedef struct{
     int speed;
     int gen;
     char legendary[5];
-}Pokemon;
+};
+typedef struct descritor Lista;
 
-typedef struct {
-    void* data;
-    struct no* prev;
-    struct no* next;
-} no;
+struct Node{
+    struct Pokemon data;
+    struct Node* prev;
+    struct Node* prox;
+};
+typedef struct Node Elem;
 
-typedef struct {
-    no* head;
-    no* tail;
-} Lista;
+Lista* criarLista();
 
-struct Lista* lista criarLista();
+void apagaLista(Lista* lista);
 
-void adicionarNo(struct Pokemon** head, int id, char* nome, char* tipo1, char* tipo2, int total, int hp, int ataque, int defesa, int ataque_sp, int defesa_sp, int velocidade, int ger, char* lendario);
+bool isListaCheia(Lista* lista);
 
-bool checkPokemonById(struct Pokemon* head, int id);
+bool isListaVazia(Lista* lista);
 
-void removerNo(struct Pokemon* head);
+int sizeofLista(Lista* lista);
 
-void imprimirNo(struct Pokemon* head);
+void imprimeNo(Elem* no);
 
-#endif
+int adicionarNo(Lista* lista, struct Pokemon pokedex);
+
+int adicionaNoOutraLista(Lista* lista, Lista* time, char* name);
+
+void imprimeLista(Lista* lista);
+
+int getPositionByName(Lista* lista, char* name);
+
+void removeNo(Lista* lista, int position);
+
+void imprimeNoByPosition(Lista* lista, int position);
+
+void imprimeMinMaxTotal(Lista* lista, int caso);
+
+void adicionarNoManual(Lista* lista, int id, char* name, char* type1, char* type2, int total, int hp, int attack, int defense, int sp_atk, int sp_def, int speed, int gen, char* legendary);
+
+#endif // LISTA_H //
