@@ -79,7 +79,7 @@ int main() {
         printf("Remover pokemon - 3\n");
         printf("Limpar sua Equipe - 4\n");
         printf("Checar mais forte - 5\n");
-        printf("Checar mais forte - 6\n");
+        printf("Checar mais fraco - 6\n");
         printf("Crie seu Pokemon - 7\n");
         printf("&@#*&($&@ - 8\n");
         printf("Va para sua Aventura! - 9\n\n");
