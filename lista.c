@@ -218,10 +218,10 @@ void imprimeMinMaxTotal(Lista* lista, int caso){
     noMenor = no;
 
     while(no->prox != NULL){
-        if(no->data.total < no->prox->data.total){
+        if(noMaior->data.total < no->prox->data.total){
             noMaior = no->prox;
         }
-        if(no->data.total > no->prox->data.total){
+        if(noMenor->data.total > no->prox->data.total){
             noMenor = no->prox;
         }
         no = no->prox;
